@@ -64,7 +64,7 @@ insert into Faculties (Name) values
 ('Philosophy');
 
 -- Students
-insert into Students (AddmissionDate, Name, Surname) values
+insert into Students (AdmissionDate, Name, Surname) values
 ('2022-09-01', 'John', 'Smith'),
 ('2021-09-01', 'Alice', 'Johnson'),
 ('2020-09-01', 'Bob', 'Williams'),
@@ -128,7 +128,7 @@ insert into Presidents (Name, Surname, Salary, Premium) values
 ('John', 'Kennedy', 101000, 10500),
 ('Dwight', 'Eisenhower', 102000, 10600);
 
--- Penalties (предположим, есть ID студентов от 1 до 10)
+-- Penalties
 insert into Penalties (StudentId, Amount) values
 (1, 100),
 (2, 200),

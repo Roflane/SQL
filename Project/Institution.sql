@@ -42,7 +42,7 @@ create table Faculties (
 
 create table Students (
     [Id] int primary key identity(1, 1) not null,
-    [AddmissionDate] date not null check (AddmissionDate >= '2000-01-01'),
+    [AdmissionDate] date not null check (AdmissionDate >= '2000-01-01'),
     [Name] nvarchar(max) not null,
     [Surname] nvarchar(max) not null
 );

@@ -17,3 +17,9 @@ from Students
 where Id in (
     select top 5 StudentId from Leaderboard order by Place
 );
+
+select Name, Salary
+from Staff
+where Salary > (
+    select avg(Salary) from Staff
+);
