@@ -1,6 +1,6 @@
 select s.Name, s.Surname, sum(p.Amount) as TotalPenalty
-from Students s
-join Penalties p on s.Id = p.StudentId
+from Students as s
+join Penalties as p on s.Id = p.StudentId
 group by s.Name, s.Surname
 having sum(p.Amount) > (
     select avg(Amount) from Penalties

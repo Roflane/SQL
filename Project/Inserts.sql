@@ -128,7 +128,7 @@ insert into Presidents (Name, Surname, Salary, Premium) values
 ('John', 'Kennedy', 101000, 10500),
 ('Dwight', 'Eisenhower', 102000, 10600);
 
--- Penalties (предположим, есть ID студентов от 1 до 10)
+-- Penalties
 insert into Penalties (StudentId, Amount) values
 (1, 100),
 (2, 200),
