@@ -18,8 +18,14 @@ where Id in (
     select top 5 StudentId from Leaderboard order by Place
 );
 
-select Name, Salary
+select Name, Surname
+from Deans
+where Salary in (
+    select Salary from Deans where Salary > 10000
+);
+
+select Name, Surname
 from Staff
-where Salary > (
-    select avg(Salary) from Staff
+where Salary in (
+    Select Salary from Staff where Salary between 10000 and 35000
 );

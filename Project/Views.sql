@@ -1,12 +1,16 @@
+DROP VIEW IF EXISTS v_StudentPenalties;
+DROP VIEW IF EXISTS v_TeacherIncome;
+DROP VIEW IF EXISTS v_LeaderboardTop5;
+
 create view v_StudentPenalties as
 select
-    s.Id as StudentId,
+    s.Id,
     s.Name,
     s.Surname,
     sum(p.Amount) as TotalPenalty
 from Students s
 left join Penalties p on s.Id = p.StudentId
-group by s.Id, s.Name, s.Surname;
+group by s.Id, s.Name, s.Surname, p.Amount;
 
 create view v_TeacherIncome as
 select
@@ -24,5 +28,19 @@ select
     s.Surname,
     l.Place
 from Leaderboard l
-join Students s on l.StudentId = s.Id
+join Students as s on l.StudentId = s.Id
 where l.Place <= 5;
+
+create view v_StaffTop5 as
+select
+    Name,
+    Surname
+from Staff
+where Salary > 30000;
+
+create view v_UniversityTop5 as
+select
+    Id,
+    Name
+from Institution
+where Id <= 5;
